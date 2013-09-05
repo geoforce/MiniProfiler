@@ -270,7 +270,7 @@ module Rack
             current.measure = false
             # first param is the path
             # 0.5 means attempt to collect a sample each 0.5 secs
-            flamegraph = Flamegraph.generate(nil, fidelity: 0.5) do
+            flamegraph = Flamegraph.generate(nil, :fidelity=> 0.5) do
               status,headers,body = @app.call(env)
             end
           end
